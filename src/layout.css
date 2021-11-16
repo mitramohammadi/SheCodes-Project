@@ -1,0 +1,129 @@
+body {
+  height: 100%;
+  background-image: url("../media/pexels-ruvim-3560044.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  max-height: 100%;
+  max-width: 100%;
+  width: 100%;
+}
+.container {
+  font-family: "PT Serif", serif;
+}
+.app-body {
+  border: 1px solid #212529;
+  background-color: rgb(55, 82, 105);
+  max-width: 900px;
+  max-height: 700px;
+  margin: 50px auto;
+  opacity: 0.8;
+}
+
+.input-form {
+  display: block;
+  margin: 40px auto 0;
+  text-align: center;
+}
+.search-city {
+  background-color: transparent;
+  border-radius: 5px;
+  border: 2px solid rgba(26, 20, 78, 0.6);
+  width: 350px;
+  height: 46px;
+}
+.search-button {
+  background-color: transparent;
+  border-radius: 5px;
+  border: 2px solid rgba(26, 20, 78, 0.6);
+  color: rgba(26, 20, 78, 0.6);
+  height: 46px;
+  transition: all 200ms ease-in-out;
+}
+.current-button {
+  background-color: transparent;
+  border-radius: 5px;
+  border: 2px solid rgba(26, 20, 78, 0.6);
+  color: rgba(26, 20, 78, 0.6);
+  height: 46px;
+  transition: all 200ms ease-in-out;
+}
+
+.search-button:hover {
+  background-color: rgba(26, 20, 78, 0.6);
+  color: rgba(96, 81, 231, 0.6);
+}
+.current-button:hover {
+  background-color: rgba(26, 20, 78, 0.6);
+  color: rgba(96, 81, 231, 0.6);
+}
+
+ul {
+  list-style: none;
+  font-size: 22px;
+}
+.current-city-row {
+  margin: 70px auto 0px;
+  max-width: 450px;
+  max-height: 200px;
+}
+.units {
+  font-size: 15px;
+  color: #212529;
+  position: relative;
+  top: -10px;
+}
+#celsius-link {
+  text-decoration: none;
+  color: #212529;
+  transition: all 200ms ease-in-out;
+}
+#fahrenheit-link {
+  text-decoration: none;
+  color: #212529;
+  transition: all 200ms ease-in-out;
+}
+#celsius-link:hover {
+  text-decoration: underline;
+}
+#fahrenheit-link:hover {
+  text-decoration: underline;
+}
+
+.current-city-emoji {
+  display: inline-block;
+  max-height: 140px;
+  max-width: 140px;
+}
+
+.location-emoji {
+  max-height: 15px;
+  max-width: 10px;
+}
+
+.container .card {
+  max-width: 150px;
+  height: 200px;
+  background-color: transparent;
+  border: 1px solid rgba(26, 20, 78, 0.6);
+}
+
+.next-day-emoji {
+  max-height: 70px;
+  max-width: 70px;
+  display: block;
+  margin: 10px auto;
+}
+
+.next-day-row {
+  margin: 20px 0px 20px 15%;
+}
+
+.next-day-info {
+  margin: 5px auto;
+  font-size: 16px;
+}
+.next-day-temp {
+  margin: 5px auto;
+  font-size: 16px;
+}

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link href="src/layout.css" rel="stylesheet" type="text/css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Serif:ital@1&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="app-body">
+        <form class="input-form">
+          <input type="text" placeholder="Enter a city" class="search-city" />
+          <input type="submit" value="Search" class="search-button" />
+          <input type="submit" value="Current" class="current-button" />
+        </form>
+        <div class="current-city-row">
+          <div class="row">
+            <div class="col-6">
+              <div class="current-city">
+                <img
+                  class="current-city-emoji"
+                  src="media/undraw_Raining_re_4b55.svg"
+                />
+              </div>
+            </div>
+            <div class="col-6">
+              <br />
+              <ul>
+                <li>
+                  <span id="current-temp">16</span>
+                  <span class="units">
+                    <a href="#" id="celsius-link">°C</a> |
+                    <a href="#" id="fahrenheit-link">°F</a>
+                  </span>
+                </li>
+                <li>
+                  <img
+                    class="location-emoji"
+                    src="media/emojipng.com-1734037.png"
+                  /><span id="cuurent-city"> London</span>
+                </li>
+                <li class="current-date" id="current-date">Date</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="next-day-row">
+          <div class="row">
+            <div class="col-2">
+              <div class="card">
+                <div class="next-day-info">
+                  <br />
+                  <span id="day1">Tuesday 26</span>
+                </div>
+                <img
+                  src="media/undraw_Sunny_day_re_gyxr.svg"
+                  class="next-day-emoji"
+                />
+                <div class="next-day-temp">18 °C</div>
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="card">
+                <div class="next-day-info">
+                  <br />
+                  <span id="day2">Tuesday 26</span>
+                </div>
+                <img
+                  src="media/undraw_Raining_re_4b55.svg"
+                  class="next-day-emoji"
+                />
+                <div class="next-day-temp">17 °C</div>
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="card">
+                <div class="next-day-info">
+                  <br />
+                  <span id="day3">Tuesday 26</span>
+                </div>
+                <img
+                  src="media/undraw_snowman_1_a2ch.svg"
+                  class="next-day-emoji"
+                />
+                <div class="next-day-temp">14 °C</div>
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="card">
+                <div class="next-day-info">
+                  <br />
+                  <span id="day4">Tuesday 26</span>
+                </div>
+                <img
+                  src="media/undraw_Raining_re_4b55.svg"
+                  class="next-day-emoji"
+                />
+                <div class="next-day-temp">15 °C</div>
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="card">
+                <div class="next-day-info">
+                  <br />
+                  <span id="day5">Tuesday 26</span>
+                </div>
+                <img
+                  src="media/undraw_Raining_re_4b55.svg"
+                  class="next-day-emoji"
+                />
+                <div class="next-day-temp">15 °C</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="src/app.js"></script>
+  </body>
+</html>
