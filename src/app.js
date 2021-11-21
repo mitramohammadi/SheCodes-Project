@@ -46,6 +46,55 @@ function convertTempCtF(event) {
   document.querySelector("#current-temp").innerHTML = Math.round(tempF);
 }
 
+function formatDate(event) {
+  event.preventDefault();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Thuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday",
+    "Monday",
+    "Thuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+
+  let date = new Date();
+  let weekDay = date.getDay();
+  let hour = date.getHours();
+  let mins = date.getMinutes();
+  if (hour < 10) {
+    hour = `0${hour}`;
+  }
+  if (mins < 10) {
+    mins = `0${mins}`;
+  }
+  let currentDate = document.querySelector("#current-date");
+  let nextDay = new Array();
+  let j = 0;
+  currentDate.innerHTML = `${days[weekDay]} ${hour}:${mins}`;
+}
+
 let days = [
   "Sunday",
   "Monday",
@@ -103,9 +152,11 @@ document.querySelector("#day4").innerHTML = `${nextDay[3]}`;
 document.querySelector("#day5").innerHTML = `${nextDay[4]}`;
 
 let temperature = null;
+
 showLondon();
 let searchCity = document.querySelector(".search-button");
 searchCity.addEventListener("click", showCity);
+searchCity.addEventListener("click", formatDate);
 
 let tempC = document.querySelector("#celsius-link");
 let tempF = document.querySelector("#fahrenheit-link");
