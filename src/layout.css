@@ -40,31 +40,32 @@ body {
   height: 46px;
   transition: all 200ms ease-in-out;
 }
-.current-button {
-  background-color: transparent;
-  border-radius: 5px;
-  border: 2px solid rgba(26, 20, 78, 0.6);
-  color: rgba(26, 20, 78, 0.6);
-  height: 46px;
-  transition: all 200ms ease-in-out;
-}
 
 .search-button:hover {
-  background-color: rgba(26, 20, 78, 0.6);
-  color: rgba(96, 81, 231, 0.6);
-}
-.current-button:hover {
   background-color: rgba(26, 20, 78, 0.6);
   color: rgba(96, 81, 231, 0.6);
 }
 
 ul {
   list-style: none;
+  font-size: 16px;
+}
+
+li:first-letter {
+  text-transform: capitalize;
+}
+
+#current-temp {
+  font-size: 22px;
+  font-weight: bold;
+}
+#cuurent-city {
+  font-weight: bold;
   font-size: 22px;
 }
 .current-city-row {
   margin: 70px auto 0px;
-  max-width: 450px;
+  max-width: 600px;
   max-height: 200px;
 }
 .units {
@@ -92,13 +93,8 @@ ul {
 
 .current-city-emoji {
   display: inline-block;
-  max-height: 140px;
-  max-width: 140px;
-}
-
-.location-emoji {
-  max-height: 15px;
-  max-width: 10px;
+  max-height: 150px;
+  max-width: 150px;
 }
 
 .container .card {

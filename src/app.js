@@ -1,6 +1,19 @@
 function showTemp(response) {
   let searchCityTemp = document.querySelector("#current-temp");
-  searchCityTemp.innerHTML = response.data.main.temp;
+  temperature = response.data.main.temp;
+  searchCityTemp.innerHTML = Math.round(temperature);
+  console.log(response);
+  let icon = document.querySelector("#current-city-emoji");
+  icon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  let weatherDesc = document.querySelector("#weatherDesc");
+  weatherDesc.innerHTML = `${response.data.weather[0].description}`;
+  let humidity = document.querySelector("#humidity");
+  humidity.innerHTML = `Humidity: ${response.data.main.humidity}%`;
+  let wind = document.querySelector("#wind");
+  wind.innerHTML = `, Wind: ${response.data.wind.speed}km/h`;
 }
 
 function showCity(event) {
@@ -16,36 +29,21 @@ function showCity(event) {
   }
 }
 
-function currentPosition(position) {
-  let lat = position.coords.latitude;
-  let lon = position.coords.longitude;
-  console.log(lat);
-  console.log(lon);
-  let apiUrl = `api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric`;
+function showLondon() {
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=London&units=metric`;
   let apiKey = "7dd408b3bd35b3107b440ac80deba4df";
   let temp = axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemp);
-  let currentCity = document.querySelector("#cuurent-city");
-  currentCity.innerHTML = "";
-}
-
-function showCurrentCity(event) {
-  event.preventDefault();
-  navigator.geolocation.getCurrentPosition(currentPosition);
 }
 
 function convertTempFtC(event) {
   event.preventDefault();
-  let temp = document.querySelector("#current-temp").innerHTML;
-  let tempC = Math.round(((temp - 32) * 5) / 9);
-  console.log(document.querySelector("#current-temp").innerHTML);
-  document.querySelector("#current-temp").innerHTML = tempC;
+  document.querySelector("#current-temp").innerHTML = Math.round(temperature);
 }
 
 function convertTempCtF(event) {
   event.preventDefault();
-  let temp = document.querySelector("#current-temp").innerHTML;
-  let tempF = Math.round((temp * 9) / 5 + 32);
-  document.querySelector("#current-temp").innerHTML = tempF;
+  let tempF = (temperature * 9) / 5 + 32;
+  document.querySelector("#current-temp").innerHTML = Math.round(tempF);
 }
 
 let days = [
@@ -93,6 +91,7 @@ let currentDate = document.querySelector("#current-date");
 let nextDay = new Array();
 let j = 0;
 currentDate.innerHTML = `${days[weekDay]} ${hour}:${mins}`;
+
 for (var i = weekDay; i < weekDay + 5; i++) {
   nextDay[j] = days[i + 1];
   j++;
@@ -103,11 +102,10 @@ document.querySelector("#day3").innerHTML = `${nextDay[2]}`;
 document.querySelector("#day4").innerHTML = `${nextDay[3]}`;
 document.querySelector("#day5").innerHTML = `${nextDay[4]}`;
 
+let temperature = null;
+showLondon();
 let searchCity = document.querySelector(".search-button");
 searchCity.addEventListener("click", showCity);
-
-let currentCity = document.querySelector(".current-button");
-currentCity.addEventListener("click", showCurrentCity);
 
 let tempC = document.querySelector("#celsius-link");
 let tempF = document.querySelector("#fahrenheit-link");
